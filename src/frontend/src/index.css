@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    /* Deep charcoal background */
+    --background: 0.09 0.008 240;
+    --foreground: 0.95 0.005 240;
+    --card: 0.13 0.01 240;
+    --card-foreground: 0.95 0.005 240;
+    --popover: 0.13 0.01 240;
+    --popover-foreground: 0.95 0.005 240;
+    /* Cyan-pink gradient primary - use cyan as primary */
+    --primary: 0.87 0.15 192;
+    --primary-foreground: 0.09 0.008 240;
+    /* Pink/red accent */
+    --accent: 0.59 0.25 15;
+    --accent-foreground: 0.95 0.005 240;
+    /* Dark surfaces */
+    --secondary: 0.16 0.01 240;
+    --secondary-foreground: 0.95 0.005 240;
+    --muted: 0.16 0.01 240;
+    --muted-foreground: 0.62 0.01 240;
+    /* Borders */
+    --border: 0.22 0.01 240;
+    --input: 0.22 0.01 240;
+    --ring: 0.87 0.15 192;
+    --destructive: 0.59 0.25 15;
+    --destructive-foreground: 0.95 0.005 240;
+    --chart-1: 0.87 0.15 192;
+    --chart-2: 0.59 0.25 15;
+    --chart-3: 0.62 0.24 350;
+    --chart-4: 0.58 0.18 257;
+    --chart-5: 0.67 0.15 155;
+    --sidebar: 0.11 0.008 240;
+    --sidebar-foreground: 0.95 0.005 240;
+    --sidebar-primary: 0.87 0.15 192;
+    --sidebar-primary-foreground: 0.09 0.008 240;
+    --sidebar-accent: 0.16 0.01 240;
+    --sidebar-accent-foreground: 0.95 0.005 240;
+    --sidebar-border: 0.22 0.01 240;
+    --sidebar-ring: 0.87 0.15 192;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .brand-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.87 0.15 192) 0%,
+      oklch(0.59 0.25 15) 100%
+    );
+  }
+
+  .brand-gradient-text {
+    background: linear-gradient(
+      135deg,
+      oklch(0.87 0.15 192) 0%,
+      oklch(0.59 0.25 15) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .video-card-shadow {
+    box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.6);
+  }
+
+  .card-surface {
+    background: oklch(0.13 0.01 240);
+    border: 1px solid oklch(0.22 0.01 240);
+  }
+
+  .live-pill {
+    background: oklch(0.62 0.24 350);
+    color: white;
+  }
+
+  .follow-btn {
+    background: oklch(0.58 0.18 257);
+    color: white;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: oklch(0.09 0.008 240);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: oklch(0.25 0.01 240);
+    border-radius: 2px;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
